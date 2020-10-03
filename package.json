@@ -2,6 +2,12 @@
   "name": "calcujson",
   "version": "0.1.1",
   "description": "Compute values defined by JSON objects",
+  "author": "Fergus Bentley <fergus.bentley@gmail.com> (fergcb.uk)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fergcb/calcujson.git"
+  },
   "main": "build/index.js",
   "files": [
     "build/**/*"
@@ -12,8 +18,6 @@
     "build": "trash build && tsc",
     "prepublishOnly": "npm run lint && npm test && npm run build"
   },
-  "author": "Fergus Bentley <fergus.bentley@gmail.com> (fergcb.uk)",
-  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^26.0.14",
     "@types/lodash.has": "^4.5.6",
