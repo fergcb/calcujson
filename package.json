@@ -10,7 +10,7 @@
     "lint": "eslint ./src --ext .ts",
     "test": "jest --config jestconfig.json",
     "build": "trash build && tsc",
-    "prepublishOnly": "npm run lint && npm test && npm build"
+    "prepublishOnly": "npm run lint && npm test && npm run build"
   },
   "author": "Fergus Bentley <fergus.bentley@gmail.com> (fergcb.uk)",
   "license": "MIT",
