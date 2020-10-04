@@ -4,8 +4,8 @@ import { Store } from '../store'
 import has from 'lodash.has'
 import { ComputationShapeError, PathNotFoundError } from '../error'
 
-export default class LiteralComputation extends Computation<Literal> {
-  constructor (store: Store, source: Literal) {
+export default class LiteralComputation<T extends Literal = Literal> extends Computation<T> {
+  constructor (store: Store, source: T) {
     super(store, source)
 
     if (has(this.source, 'from') && has(this.source, 'value')) {
