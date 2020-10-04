@@ -15,7 +15,7 @@ export interface Bool extends Literal {
 
 export interface Str extends Literal {
   type: 'str'
-  value?: string 
+  value?: string
 }
 
 export type NumType = 'num' | 'int'
