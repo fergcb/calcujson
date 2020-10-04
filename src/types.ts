@@ -19,7 +19,7 @@ export interface Integer extends Numeric {
   type: 'integer'
 }
 
-export interface Sum {
+export interface Sum extends Computable {
   type: 'sum',
   values: Numeric[]
 }

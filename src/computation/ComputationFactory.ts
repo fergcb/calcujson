@@ -1,5 +1,5 @@
-import { Computation, IntegerComputation, NumberComputation } from '.'
-import { Computable, Integer, Numeric } from '../types'
+import { Computation, IntegerComputation, NumberComputation, SumComputation } from '.'
+import { Computable, Integer, Numeric, Sum } from '../types'
 import { Store } from '../store'
 import { ComputationTypeError } from '../error'
 
@@ -16,6 +16,8 @@ export default class ComputationFactory {
         return new IntegerComputation(this.store, computable as Integer)
       case 'number':
         return new NumberComputation(this.store, computable as Numeric)
+      case 'sum':
+        return new SumComputation(this.store, computable as unknown as Sum)
     }
 
     throw new ComputationTypeError(computable.type)

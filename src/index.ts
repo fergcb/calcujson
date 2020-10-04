@@ -2,7 +2,8 @@ import {
   Computable,
   Literal,
   Integer,
-  Numeric
+  Numeric,
+  Sum
 } from './types'
 
 import {
@@ -10,7 +11,8 @@ import {
   ComputationFactory,
   IntegerComputation,
   LiteralComputation,
-  NumberComputation
+  NumberComputation,
+  SumComputation
 } from './computation'
 
 import {
@@ -32,12 +34,14 @@ export {
   Integer,
   Literal,
   Numeric,
+  Sum,
 
   Computation,
   ComputationFactory,
   IntegerComputation,
   LiteralComputation,
   NumberComputation,
+  SumComputation,
 
   MapStore,
   Store,

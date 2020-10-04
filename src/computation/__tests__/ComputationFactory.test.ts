@@ -1,4 +1,4 @@
-import { ComputationFactory, IntegerComputation, NumberComputation } from '..'
+import { ComputationFactory, IntegerComputation, NumberComputation, SumComputation } from '..'
 import { MapStore, ComputationTypeError } from '../..'
 
 describe('Factory selects correct types', () => {
@@ -27,6 +27,16 @@ describe('Factory selects correct types', () => {
 
     expect(cf.create(computable))
       .toBeInstanceOf(NumberComputation)
+  })
+
+  test('sum', () => {
+    const computable = {
+      type: 'sum',
+      values: []
+    }
+
+    expect(cf.create(computable))
+      .toBeInstanceOf(SumComputation)
   })
 
   test('invalid (throws error)', () => {
