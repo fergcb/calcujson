@@ -1,14 +1,16 @@
 import {
   Computable,
   Literal,
-  Integer
+  Integer,
+  Numeric
 } from './types'
 
 import {
   Computation,
   ComputationFactory,
   IntegerComputation,
-  LiteralComputation
+  LiteralComputation,
+  NumberComputation
 } from './computation'
 
 import {
@@ -27,13 +29,15 @@ import {
 
 export {
   Computable,
-  Literal,
   Integer,
+  Literal,
+  Numeric,
 
   Computation,
   ComputationFactory,
   IntegerComputation,
   LiteralComputation,
+  NumberComputation,
 
   MapStore,
   Store,
