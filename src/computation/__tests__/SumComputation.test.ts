@@ -82,7 +82,28 @@ describe('SumComputation', () => {
     })
 
     test('throws error if non-numeric types are supplied', () => {
-      // TODO: Implement this test once non-numeric types are available
+      const computable: unknown = {
+        type: 'sum',
+        values: [
+          {
+            type: 'num',
+            value: 1
+          },
+          {
+            type: 'bool',
+            value: true
+          },
+          {
+            type: 'num',
+            value: 2
+          }
+        ]
+      }
+
+      const computation = new SumComputation(store, computable as Sum)
+
+      expect(() => computation.evaluate())
+        .toThrow(ComputationShapeError)
     })
   })
 

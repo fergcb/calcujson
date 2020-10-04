@@ -8,6 +8,16 @@ export interface Literal extends Computable {
   value?: any
 }
 
+export interface Bool extends Literal {
+  type: 'bool',
+  value?: boolean
+}
+
+export interface Str extends Literal {
+  type: 'str'
+  value?: string 
+}
+
 export type NumType = 'num' | 'int'
 
 export interface Num extends Literal {

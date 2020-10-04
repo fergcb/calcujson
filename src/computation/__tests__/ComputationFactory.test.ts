@@ -1,4 +1,4 @@
-import { ComputationFactory, IntegerComputation, NumberComputation, SumComputation } from '..'
+import { BooleanComputation, ComputationFactory, IntegerComputation, NumberComputation, StringComputation, SumComputation } from '..'
 import { MapStore, ComputationTypeError } from '../..'
 
 describe('Factory selects correct types', () => {
@@ -7,6 +7,16 @@ describe('Factory selects correct types', () => {
   beforeAll(() => {
     store = new MapStore()
     cf = new ComputationFactory(store)
+  })
+
+  test('bool', () => {
+    const computable = {
+      type: 'bool',
+      value: true
+    }
+
+    expect(cf.create(computable))
+      .toBeInstanceOf(BooleanComputation)
   })
 
   test('int', () => {
@@ -27,6 +37,16 @@ describe('Factory selects correct types', () => {
 
     expect(cf.create(computable))
       .toBeInstanceOf(NumberComputation)
+  })
+
+  test('str', () => {
+    const computable = {
+      type: 'str',
+      value: 'foo'
+    }
+
+    expect(cf.create(computable))
+      .toBeInstanceOf(StringComputation)
   })
 
   test('sum', () => {
