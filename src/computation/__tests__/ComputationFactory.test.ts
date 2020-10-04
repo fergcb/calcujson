@@ -1,4 +1,4 @@
-import { ComputationFactory, IntegerComputation } from '..'
+import { ComputationFactory, IntegerComputation, NumberComputation } from '..'
 import { MapStore, ComputationTypeError } from '../..'
 
 describe('Factory selects correct types', () => {
@@ -17,6 +17,16 @@ describe('Factory selects correct types', () => {
 
     expect(cf.create(computable))
       .toBeInstanceOf(IntegerComputation)
+  })
+
+  test('number', () => {
+    const computable = {
+      type: 'number',
+      value: 4.2
+    }
+
+    expect(cf.create(computable))
+      .toBeInstanceOf(NumberComputation)
   })
 
   test('invalid (throws error)', () => {
