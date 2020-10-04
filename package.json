@@ -1,6 +1,6 @@
 {
   "name": "calcujson",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Compute values defined by JSON objects",
   "author": "Fergus Bentley <fergus.bentley@gmail.com> (fergcb.uk)",
   "license": "MIT",
