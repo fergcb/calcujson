@@ -1,8 +1,8 @@
 import { ValueTypeError } from '../error'
-import { Integer } from '../types'
+import { Int } from '../types'
 import NumberComputation from './NumberComputation'
 
-export default class IntegerComputation extends NumberComputation<Integer> {
+export default class IntegerComputation extends NumberComputation<Int> {
   public evaluate (): number {
     const value = super.evaluate()
 

@@ -1,13 +1,13 @@
 import { NumberComputation } from '..'
 import { MapStore, ValueTypeError } from '../..'
-import { Numeric } from '../../types'
+import { Num } from '../../types'
 
 describe('NumberComputation', () => {
   const store = new MapStore()
 
   test('evaluates to a number', () => {
-    const computable: Numeric = {
-      type: 'number',
+    const computable: Num = {
+      type: 'num',
       value: 42
     }
 
@@ -19,11 +19,11 @@ describe('NumberComputation', () => {
 
   test('throws error if resolved value is not a number', () => {
     const computable: unknown = {
-      type: 'number',
+      type: 'num',
       value: '123'
     }
 
-    const computation = new NumberComputation(store, computable as Numeric)
+    const computation = new NumberComputation(store, computable as Num)
 
     expect(() => computation.evaluate())
       .toThrow(ValueTypeError)

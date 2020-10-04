@@ -9,9 +9,9 @@ describe('Factory selects correct types', () => {
     cf = new ComputationFactory(store)
   })
 
-  test('integer', () => {
+  test('int', () => {
     const computable = {
-      type: 'integer',
+      type: 'int',
       value: 10
     }
 
@@ -19,9 +19,9 @@ describe('Factory selects correct types', () => {
       .toBeInstanceOf(IntegerComputation)
   })
 
-  test('number', () => {
+  test('num', () => {
     const computable = {
-      type: 'number',
+      type: 'num',
       value: 4.2
     }
 

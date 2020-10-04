@@ -11,7 +11,7 @@ describe('LiteralComputation', () => {
   describe('construction', () => {
     test('fails if neither `from` nor `value` is specified', () => {
       const computable = {
-        type: 'integer'
+        type: 'int'
       }
 
       expect(() => new LiteralComputation(store, computable))
@@ -20,7 +20,7 @@ describe('LiteralComputation', () => {
 
     test('fails if both `from` and `value` are specified', () => {
       const computable = {
-        type: 'integer',
+        type: 'int',
         from: 'test.path',
         value: 42
       }
@@ -32,7 +32,7 @@ describe('LiteralComputation', () => {
 
   test('evaluates to given value if specified', () => {
     const computable = {
-      type: 'integer',
+      type: 'int',
       value: 42
     }
 
@@ -44,7 +44,7 @@ describe('LiteralComputation', () => {
 
   test('evaluates to stored value at given path', () => {
     const computable = {
-      type: 'integer',
+      type: 'int',
       from: 'test'
     }
 
@@ -58,7 +58,7 @@ describe('LiteralComputation', () => {
 
   test('throws error if path not found', () => {
     const computable = {
-      type: 'integer',
+      type: 'int',
       from: 'test'
     }
 
@@ -70,7 +70,7 @@ describe('LiteralComputation', () => {
 
   test('described with given value', () => {
     const computable = {
-      type: 'integer',
+      type: 'int',
       value: 42
     }
 
@@ -82,7 +82,7 @@ describe('LiteralComputation', () => {
 
   test('described with given path', () => {
     const computable = {
-      type: 'integer',
+      type: 'int',
       from: 'test.path'
     }
 
@@ -94,7 +94,7 @@ describe('LiteralComputation', () => {
 
   test('described with given description', () => {
     const computable = {
-      type: 'integer',
+      type: 'int',
       value: 42,
       desc: 'The answer to life, the universe, and everything'
     }

@@ -1,8 +1,8 @@
 import {
   Computable,
   Literal,
-  Integer,
-  Numeric,
+  Int,
+  Num,
   Sum
 } from './types'
 
@@ -31,9 +31,9 @@ import {
 
 export {
   Computable,
-  Integer,
+  Int,
   Literal,
-  Numeric,
+  Num,
   Sum,
 
   Computation,

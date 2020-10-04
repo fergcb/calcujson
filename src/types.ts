@@ -8,18 +8,18 @@ export interface Literal extends Computable {
   value?: any
 }
 
-type NumericType = 'number' | 'integer'
+export type NumType = 'num' | 'int'
 
-export interface Numeric extends Literal {
-  type: NumericType,
+export interface Num extends Literal {
+  type: NumType,
   value?: number
 }
 
-export interface Integer extends Numeric {
-  type: 'integer'
+export interface Int extends Num {
+  type: 'int'
 }
 
 export interface Sum extends Computable {
   type: 'sum',
-  values: Numeric[]
+  values: Num[]
 }

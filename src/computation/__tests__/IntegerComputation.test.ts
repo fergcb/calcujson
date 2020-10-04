@@ -1,13 +1,13 @@
 import { IntegerComputation } from '..'
 import { MapStore, ValueTypeError } from '../..'
-import { Integer } from '../../types'
+import { Int } from '../../types'
 
 describe('IntegerComputation', () => {
   const store = new MapStore()
 
   test('evaluates to an integer', () => {
-    const computable: Integer = {
-      type: 'integer',
+    const computable: Int = {
+      type: 'int',
       value: 42
     }
 
@@ -19,11 +19,11 @@ describe('IntegerComputation', () => {
 
   test('throws error if resolved value is not an integer', () => {
     const computable: unknown = {
-      type: 'integer',
+      type: 'int',
       value: 4.2
     }
 
-    const computation = new IntegerComputation(store, computable as Integer)
+    const computation = new IntegerComputation(store, computable as Int)
 
     expect(() => computation.evaluate())
       .toThrow(ValueTypeError)

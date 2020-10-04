@@ -24,15 +24,15 @@ describe('SumComputation', () => {
         type: 'sum',
         values: [
           {
-            type: 'number',
+            type: 'num',
             value: 1
           },
           {
-            type: 'number',
+            type: 'num',
             value: 2
           },
           {
-            type: 'number',
+            type: 'num',
             value: 3
           }
         ]
@@ -49,15 +49,15 @@ describe('SumComputation', () => {
         type: 'sum',
         values: [
           {
-            type: 'number',
+            type: 'num',
             value: 0.1
           },
           {
-            type: 'integer',
+            type: 'int',
             value: 1
           },
           {
-            type: 'number',
+            type: 'num',
             value: 10.01
           }
         ]
@@ -105,16 +105,16 @@ describe('SumComputation', () => {
         type: 'sum',
         values: [
           {
-            type: 'number',
+            type: 'num',
             value: 1
           },
           {
-            type: 'number',
+            type: 'num',
             value: 2,
             desc: 'two'
           },
           {
-            type: 'number',
+            type: 'num',
             from: 'number.three'
           }
         ]
