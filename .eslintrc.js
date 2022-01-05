@@ -12,5 +12,6 @@ module.exports = {
   rules: {
     'comma-dangle': ['error', 'always-multiline'],
     '@typescript-eslint/restrict-template-expressions': 'off',
+    'valid-typeof': ['error', { requireStringLiterals: false }],
   },
 }
