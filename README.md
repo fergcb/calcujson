@@ -18,13 +18,16 @@ import CalcuJSON from 'calcujson'
 const parse = CalcuJSON()
 
 const data = {
-  type: 'num',
-  value: 42,
-  desc: 'The answer to life, the universe, and everything'
+  type: 'add',
+  items: [
+    { type: 'num', value: 1 },
+    { type: 'num', value: 2, desc: 'II' },
+    { type: 'num', value: 3, desc: 'three' },
+  ]
 }
 
 const computation = parse(data)
 
-console.log(computation.evaluate()) // >>> 42
-console.log(computation.desc) // >>> "The answer to life, the universe, and everything"
+console.log(computation.evaluate()) // >>> 6
+console.log(computation.desc) // >>> 1 + II + three
 ```
