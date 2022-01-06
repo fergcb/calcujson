@@ -3,19 +3,28 @@ type TerminalType = number | string | boolean
 
 // The core data structure for a Store, a type-restricted JS object
 interface DataObject {
-  [key: string]: DataObject | TerminalType
+  [key: string]: DataType
+}
+
+type DataType = TerminalType | DataObject
+
+// Core interface for a store to be used by get/set computations
+export interface IStore {
+  has: (path: string) => boolean
+  get: (path: string) => DataType
+  set: (path: string, value: DataType) => this
 }
 
 // Type guard for TerminalType
 // returns true if the value has a type in the TerminalType union
-function isTerminal (value: DataObject | TerminalType): value is TerminalType {
+function isTerminal (value: DataType): value is TerminalType {
   return typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean'
 }
 
 /**
- * A basic data store to facilitate 'set' computations and 'from' attributes
+ * A basic data store to facilitate get/set computations
  */
-export default class Store {
+export default class Store implements IStore {
   constructor (
     private readonly data: DataObject = {},
   ) {}
@@ -27,7 +36,7 @@ export default class Store {
    * @returns true if the path points to a value, else false
    */
   public has (path: string): boolean {
-    let val: DataObject | TerminalType = this.data
+    let val: DataType = this.data
     const segs = path.split('.')
     for (const seg of segs) {
       val = val[seg]
@@ -43,8 +52,8 @@ export default class Store {
    * @param path The path to get from
    * @returns The value at the path
    */
-  public get (path: string): DataObject | TerminalType {
-    let val: DataObject | TerminalType = this.data
+  public get (path: string): DataType {
+    let val: DataType = this.data
     const visited: string[] = []
     path.split('.').forEach(seg => {
       visited.push(seg)
@@ -63,8 +72,8 @@ export default class Store {
    * @param value The value to insert/update
    * @returns a reference to the Store instance, for chaining
    */
-  public set (path: string, value: DataObject | TerminalType): this {
-    let obj: DataObject | TerminalType = this.data
+  public set (path: string, value: DataType): this {
+    let obj: DataType = this.data
     const visited: string[] = []
     const segs = path.split('.')
     const name = segs.pop()

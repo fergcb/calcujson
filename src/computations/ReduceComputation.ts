@@ -1,5 +1,5 @@
 import Factory from '../factory'
-import Store from '../Store'
+import { IStore } from '../Store'
 import Computation from './Computation'
 
 import ReduceComputable, {
@@ -25,7 +25,7 @@ export default abstract class ReduceComputation<T extends ReduceComputable, R> e
     private readonly symbol: string, // A symbol that represents the operation, e.g. "+"
     private readonly valueType: string, // The expected value of `typeof x` where x is an evaluated item from `data.items`
     private readonly reducer: Reducer<R>, // The function to pass to Array.prototype.reduce
-    store: Store,
+    store: IStore,
     data: T,
   ) {
     super(store, data)
@@ -62,25 +62,25 @@ export default abstract class ReduceComputation<T extends ReduceComputable, R> e
  */
 
 export class AddComputation extends ReduceComputation<AddComputable, number> {
-  constructor (store: Store, data: AddComputable) {
+  constructor (store: IStore, data: AddComputable) {
     super('+', 'number', (a: number, b: number) => a + b, store, data)
   }
 }
 
 export class SubtractComputation extends ReduceComputation<SubtractComputable, number> {
-  constructor (store: Store, data: SubtractComputable) {
+  constructor (store: IStore, data: SubtractComputable) {
     super('-', 'number', (a: number, b: number) => a - b, store, data)
   }
 }
 
 export class MultiplyComputation extends ReduceComputation<MultiplyComputable, number> {
-  constructor (store: Store, data: MultiplyComputable) {
+  constructor (store: IStore, data: MultiplyComputable) {
     super('*', 'number', (a: number, b: number) => a * b, store, data)
   }
 }
 
 export class DivideComputation extends ReduceComputation<DivideComputable, number> {
-  constructor (store: Store, data: DivideComputable) {
+  constructor (store: IStore, data: DivideComputable) {
     super('/', 'number', (a: number, b: number) => a / b, store, data)
   }
 }
@@ -90,7 +90,7 @@ export class DivideComputation extends ReduceComputation<DivideComputable, numbe
  */
 
 export class JoinComputation extends ReduceComputation<JoinComputable, string> {
-  constructor (store: Store, data: JoinComputable) {
+  constructor (store: IStore, data: JoinComputable) {
     super(',', 'string', (a: string, b: string) => a + b, store, data)
   }
 }
@@ -100,19 +100,19 @@ export class JoinComputation extends ReduceComputation<JoinComputable, string> {
  */
 
 export class AndComputation extends ReduceComputation<AndComputable, boolean> {
-  constructor (store: Store, data: AndComputable) {
+  constructor (store: IStore, data: AndComputable) {
     super('AND', 'boolean', (a: boolean, b: boolean) => a && b, store, data)
   }
 }
 
 export class OrComputation extends ReduceComputation<OrComputable, boolean> {
-  constructor (store: Store, data: OrComputable) {
+  constructor (store: IStore, data: OrComputable) {
     super('OR', 'boolean', (a: boolean, b: boolean) => a || b, store, data)
   }
 }
 
 export class XorComputation extends ReduceComputation<XorComputable, boolean> {
-  constructor (store: Store, data: XorComputable) {
+  constructor (store: IStore, data: XorComputable) {
     super('XOR', 'boolean', (a: boolean, b: boolean) => (a || b) && !(a && b), store, data)
   }
 }

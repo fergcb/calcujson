@@ -1,12 +1,12 @@
 import Computable from 'src/computables/Computable'
-import Store from 'src/Store'
+import { IStore } from 'src/Store'
 
 /**
  * The base class for Computations - responsible for evaluating and describing computations using Computable data
  */
 export default abstract class Computation<T extends Computable> {
   constructor (
-    protected readonly store: Store,
+    protected readonly store: IStore,
     protected readonly data: T,
   ) {}
 
