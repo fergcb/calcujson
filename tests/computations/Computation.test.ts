@@ -1,8 +1,8 @@
-import Computable from '../../src/computables/Computable'
+import BaseComputable from '../../src/computables/BaseComputable'
 import Computation from '../../src/computations/Computation'
 import Store from '../../src/Store'
 
-class MockComputation extends Computation<Computable> {
+class MockComputation extends Computation<BaseComputable> {
   public evaluate (): undefined {
     return undefined
   }

@@ -1,9 +1,9 @@
-import Computable from './Computable'
+import BaseComputable from './BaseComputable'
 
 /**
  * The base type for Computables that resolve directly to a single constant value
  */
-export default interface LiteralComputable<T> extends Computable {
+export default interface LiteralComputable<T> extends BaseComputable {
   value: T
 }
 

@@ -1,10 +1,11 @@
+import BaseComputable from './BaseComputable'
 import Computable from './Computable'
 
 /**
  * The base type for Computables that take an array of Computables,
  * then evaluate and apply a reduction to those Computables
  */
-export default interface ReduceComputable extends Computable {
+export default interface ReduceComputable extends BaseComputable {
   items: Computable[]
 }
 
