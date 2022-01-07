@@ -42,5 +42,6 @@ export default function (store: IStore = new Store()): ComputationFactory {
       case 'or': return new OrComputation(store, data)
       case 'xor': return new XorComputation(store, data)
     }
+    throw Error(`Unrecognised computation type '${(data as any).type}'.`)
   }
 }
