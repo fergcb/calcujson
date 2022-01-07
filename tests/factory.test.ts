@@ -42,6 +42,6 @@ describe('factory', () => {
     const factory = Factory()
     const data = { type: 'invalid' }
 
-    expect(() => factory(data)).toThrowError()
+    expect(() => factory(data as any)).toThrowError()
   })
 })
