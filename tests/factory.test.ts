@@ -15,6 +15,9 @@ import {
   XorComputation,
 } from '../src/computations/ReduceComputation'
 
+import GetComputation from '../src/computations/GetComputation'
+import SetComputation from '../src/computations/SetComputation'
+
 import Factory from '../src/factory'
 
 describe('factory', () => {
@@ -31,6 +34,8 @@ describe('factory', () => {
     ${AndComputation}      | ${'and'}   | ${{ items: [] }}
     ${OrComputation}       | ${'or'}    | ${{ items: [] }}
     ${XorComputation}      | ${'xor'}   | ${{ items: [] }}
+    ${GetComputation}      | ${'get'}   | ${{}}
+    ${SetComputation}      | ${'set'}   | ${{ value: { type: 'str', value: 'irrelevant' } }}
   `('$type', ({ Clazz, type, props }) => {
     const factory = Factory()
     const data = { type, ...props }

@@ -6,7 +6,7 @@ interface DataObject {
   [key: string]: DataType
 }
 
-type DataType = TerminalType | DataObject
+export type DataType = TerminalType | DataObject
 
 // Core interface for a store to be used by get/set computations
 export interface IStore {

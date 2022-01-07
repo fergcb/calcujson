@@ -15,6 +15,9 @@ import {
   XorComputable,
 } from './ReduceComputable'
 
+import GetComputable from './GetComputable'
+import SetComputable from './SetComputable'
+
 type Computable
   = NumberComputable
   | StringComputable
@@ -27,5 +30,7 @@ type Computable
   | AndComputable
   | OrComputable
   | XorComputable
+  | GetComputable
+  | SetComputable
 
 export default Computable

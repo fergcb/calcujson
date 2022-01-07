@@ -19,6 +19,9 @@ import {
   XorComputation,
 } from './computations/ReduceComputation'
 
+import GetComputation from './computations/GetComputation'
+import SetComputation from './computations/SetComputation'
+
 type ComputationFactory = (data: Computable) => Computation<any>
 
 /**
@@ -41,6 +44,8 @@ export default function (store: IStore = new Store()): ComputationFactory {
       case 'and': return new AndComputation(store, data)
       case 'or': return new OrComputation(store, data)
       case 'xor': return new XorComputation(store, data)
+      case 'get': return new GetComputation(store, data)
+      case 'set': return new SetComputation(store, data)
     }
     throw Error(`Unrecognised computation type '${(data as any).type}'.`)
   }
