@@ -1,6 +1,6 @@
 {
   "name": "calcujson",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "A standard for transmitting computable expressions in JSON formatted text.",
   "repository": "https://github.com/fergcb/calcujson.git",
   "author": "Fergus Bentley <mail@fergcb.uk> (fergcb.uk)",
@@ -13,7 +13,9 @@
     "lint": "eslint .",
     "test": "jest",
     "watch": "parcel watch",
-    "build": "parcel build"
+    "build": "parcel build",
+    "prepack": "yarn build",
+    "prepublish": "yarn lint && yarn test"
   },
   "devDependencies": {
     "@parcel/packager-ts": "^2.0.1",
