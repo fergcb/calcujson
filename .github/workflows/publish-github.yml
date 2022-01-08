@@ -16,8 +16,6 @@ jobs:
           always-auth: true
           node-version: '16.x'
           registry-url: 'https://npm.pkg.github.com'
-          # Defaults to the user or organization that owns the workflow file
-          scope: '@octocat'
       - run: yarn
       - run: yarn publish
         env:
