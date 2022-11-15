@@ -4784,6 +4784,11 @@ minimist@^1.2.0, minimist@^1.2.5:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
   integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
+miniroll@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/miniroll/-/miniroll-0.1.1.tgz#15df46fa0d85a8034ffd3c5dc964d8d80ed4c570"
+  integrity sha512-8nY50NNGEna5E8yCzyMaApZar3KnEiAqHJgLWdpNw06bqBc9Zwqh55X3F0+Fi1uiQThtrvZJs1tH1Vfi3EmVhw==
+
 mkdirp@^0.5.1:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.5.tgz#d91cefd62d1436ca0f41620e251288d420099def"

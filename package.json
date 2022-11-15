@@ -1,6 +1,6 @@
 {
   "name": "calcujson",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A standard for transmitting computable expressions in JSON formatted text.",
   "repository": "https://github.com/fergcb/calcujson.git",
   "author": "Fergus Bentley <mail@fergcb.uk> (fergcb.uk)",
@@ -32,5 +32,9 @@
     "parcel": "^2.0.1",
     "ts-jest": "^27.1.2",
     "typescript": ">=3.0.0"
+  },
+  "peerDependencies": {},
+  "optionalDependencies": {
+    "miniroll": "^0.1.1"
   }
 }
