@@ -1,7 +1,13 @@
 {
   "name": "calcujson",
-  "private": true,
   "version": "0.2.0",
+  "description": "A standard for transmitting computable expressions in JSON formatted text.",
+  "author": "Fergus Bentley <mail@fergcb.uk> (https://fergusbentley.com)",
+  "homepage": "https://github.com/fergcb/calcujson",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fergcb/calcujson.git"
+  },
   "type": "module",
   "main": "./dist/calcujson.umd.cjs",
   "module": "./dist/calcujson.js",
@@ -20,7 +26,7 @@
     "lint": "eslint .",
     "test": "jest",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "prepublish": "yarn run lint && yarn run test"
   },
   "devDependencies": {
     "@types/jest": "^29.4.0",
