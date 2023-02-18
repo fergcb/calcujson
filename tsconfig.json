@@ -1,11 +1,29 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["es2015"],
-    "baseUrl": "./",
-    "outDir": "dist",
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "Node",
+    "strict": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
-    "strictNullChecks": true,
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
+  "include": [
+    "src/**/*",
+    "test/**/*",
+    "vite.config.ts",
+    ".eslintrc.cjs",
+    "jest.config.cjs"
+  ]
 }

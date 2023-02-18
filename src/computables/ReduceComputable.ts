@@ -1,5 +1,5 @@
-import BaseComputable from './BaseComputable'
-import Computable from './Computable'
+import type BaseComputable from './BaseComputable'
+import type Computable from './Computable'
 
 /**
  * The base type for Computables that take an array of Computables,

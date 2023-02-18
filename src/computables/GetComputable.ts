@@ -1,5 +1,5 @@
-import { DataType } from 'src/Store'
-import BaseComputable from './BaseComputable'
+import { type DataType } from '@/Store'
+import type BaseComputable from './BaseComputable'
 
 /**
  * A computable that stands for getting a value from the Store

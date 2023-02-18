@@ -1,17 +1,9 @@
-import Factory from '../factory'
-import { IStore } from '../Store'
+import Factory from '@/factory'
+import { type IStore } from '@/Store'
 import Computation from './Computation'
 
-import ReduceComputable, {
-  AddComputable,
-  AndComputable,
-  DivideComputable,
-  JoinComputable,
-  MultiplyComputable,
-  OrComputable,
-  SubtractComputable,
-  XorComputable,
-} from '../computables/ReduceComputable'
+import { type AddComputable, type AndComputable, type DivideComputable, type JoinComputable, type MultiplyComputable, type OrComputable, type SubtractComputable, type XorComputable } from '../computables/ReduceComputable'
+import type ReduceComputable from '../computables/ReduceComputable'
 
 type Reducer<R> = (a: R, b: R) => R
 
@@ -40,8 +32,9 @@ export default abstract class ReduceComputation<T extends ReduceComputable, R> e
     const values = this.items.map(item => item.evaluate())
     // Ensure computations evaluate to the correct type
     values.forEach(value => {
+      // eslint-disable-next-line valid-typeof
       if (typeof value !== this.valueType) {
-        throw Error(`Invalid value '${value}' in reduce computation. Expected \`typeof ${value} === "${this.valueType}"\`. `)
+        throw Error(`Invalid value '${String(value)}' in reduce computation. Expected \`typeof ${String(value)} === "${this.valueType}"\`. `)
       }
     })
     // Apply the reducer function over the array of evaluated items

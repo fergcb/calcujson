@@ -1,5 +1,5 @@
-import GetComputable from '../computables/GetComputable'
-import { DataType } from '../Store'
+import type GetComputable from 'computables/GetComputable'
+import { type DataType } from '@/Store'
 import Computation from './Computation'
 
 /**

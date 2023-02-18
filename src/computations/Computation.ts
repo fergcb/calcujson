@@ -1,5 +1,5 @@
-import BaseComputable from 'src/computables/BaseComputable'
-import { IStore } from 'src/Store'
+import type BaseComputable from 'computables/BaseComputable'
+import { type IStore } from '@/Store'
 
 /**
  * The base class for Computations - responsible for evaluating and describing computations using Computable data

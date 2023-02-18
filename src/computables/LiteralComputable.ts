@@ -1,4 +1,4 @@
-import BaseComputable from './BaseComputable'
+import type BaseComputable from './BaseComputable'
 
 /**
  * The base type for Computables that resolve directly to a single constant value

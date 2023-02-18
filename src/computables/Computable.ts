@@ -1,22 +1,22 @@
 import {
-  BooleanComputable,
-  NumberComputable,
-  StringComputable,
+  type BooleanComputable,
+  type NumberComputable,
+  type StringComputable,
 } from './LiteralComputable'
 
 import {
-  AddComputable,
-  AndComputable,
-  DivideComputable,
-  JoinComputable,
-  MultiplyComputable,
-  OrComputable,
-  SubtractComputable,
-  XorComputable,
+  type AddComputable,
+  type AndComputable,
+  type DivideComputable,
+  type JoinComputable,
+  type MultiplyComputable,
+  type OrComputable,
+  type SubtractComputable,
+  type XorComputable,
 } from './ReduceComputable'
 
-import GetComputable from './GetComputable'
-import SetComputable from './SetComputable'
+import type GetComputable from './GetComputable'
+import type SetComputable from './SetComputable'
 
 type Computable
   = NumberComputable

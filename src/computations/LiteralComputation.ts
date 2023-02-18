@@ -1,4 +1,5 @@
-import LiteralComputable, { BooleanComputable, NumberComputable, StringComputable } from 'src/computables/LiteralComputable'
+import { type BooleanComputable, type NumberComputable, type StringComputable } from 'computables/LiteralComputable'
+import type LiteralComputable from 'computables/LiteralComputable'
 import Computation from './Computation'
 
 // Extract the type of the LiteralComputable's `value` attribute
@@ -13,7 +14,7 @@ export default abstract class LiteralComputation<T extends LiteralComputable<any
   }
 
   protected describe (): string {
-    return `${this.data.value}`
+    return String(this.data.value)
   }
 }
 
@@ -26,7 +27,7 @@ export class NumberComputation extends LiteralComputation<NumberComputable> {}
 export class StringComputation extends LiteralComputation<StringComputable> {
   protected describe (): string {
     // Differentiate string literals from identifiers/descriptions with double quotes
-    return `"${this.data.value}"`
+    return `"${String(this.data.value)}"`
   }
 }
 

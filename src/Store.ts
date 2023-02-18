@@ -2,9 +2,8 @@
 type TerminalType = number | string | boolean
 
 // The core data structure for a Store, a type-restricted JS object
-interface DataObject {
-  [key: string]: DataType
-}
+// eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style
+interface DataObject { [key: string]: DataType }
 
 export type DataType = TerminalType | DataObject
 
@@ -39,6 +38,7 @@ export default class Store implements IStore {
     let val: DataType = this.data
     const segs = path.split('.')
     for (const seg of segs) {
+      if (isTerminal(val)) return false
       val = val[seg]
       if (val === undefined) return false
     }
@@ -57,7 +57,7 @@ export default class Store implements IStore {
     const visited: string[] = []
     path.split('.').forEach(seg => {
       visited.push(seg)
-      if (isTerminal(val)) throw Error(`Can't access property '.${seg}' on terminal value ${val} at '${visited.join('.')}'`)
+      if (isTerminal(val)) throw Error(`Can't access property '.${seg}' on terminal value ${String(val)} at '${visited.join('.')}'`)
       if (val[seg] === undefined) throw Error(`No such property '.${seg}' on object at '${visited.join('.')}'`)
       val = val[seg]
     })
@@ -78,12 +78,12 @@ export default class Store implements IStore {
     const segs = path.split('.')
     const name = segs.pop()
     if (name === undefined || name === '') throw Error(`No name specified in path ${path}.`)
-    segs.forEach(seg => {
+    for (const seg of segs) {
       visited.push(seg)
       if (obj[seg] === undefined) obj[seg] = {}
       obj = obj[seg]
-      if (isTerminal(obj)) throw Error(`Can't access property '.${seg}' on terminal value ${obj} at '${visited.join('.')}'`)
-    })
+      if (isTerminal(obj)) throw Error(`Can't access property '.${seg}' on terminal value ${String(obj)} at '${visited.join('.')}'`)
+    }
     obj[name] = value
     return this
   }

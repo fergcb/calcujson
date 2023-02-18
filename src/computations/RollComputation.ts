@@ -1,5 +1,5 @@
-import RollComputable from 'src/computables/RollComputable'
-import { IStore } from 'src/Store'
+import type RollComputable from 'computables/RollComputable'
+import { type IStore } from '@/Store'
 import Computation from './Computation'
 
 export default class RollComputation extends Computation<RollComputable> {

@@ -1,6 +1,6 @@
-import Store, { IStore } from './Store'
-import Computable from './computables/Computable'
-import Computation from './computations/Computation'
+import Store, { type IStore } from './Store'
+import type Computable from 'computables/Computable'
+import type Computation from 'computations/Computation'
 
 import {
   BooleanComputation,
@@ -46,7 +46,7 @@ export default function (store: IStore = new Store()): ComputationFactory {
       case 'xor': return new XorComputation(store, data)
       case 'get': return new GetComputation(store, data)
       case 'set': return new SetComputation(store, data)
+      default: throw Error(`Unrecognised computation type '${(data as Computable).type}'.`)
     }
-    throw Error(`Unrecognised computation type '${(data as any).type}'.`)
   }
 }

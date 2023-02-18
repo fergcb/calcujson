@@ -1,7 +1,7 @@
-import SetComputable from '../computables/SetComputable'
-import { IStore } from '../Store'
+import type SetComputable from 'computables/SetComputable'
+import { type IStore } from '@/Store'
+import Factory from '@/factory'
 import Computation from './Computation'
-import Factory from '../factory'
 
 /**
  * A computation that evaluates its child and stores the result.
