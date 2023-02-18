@@ -25,7 +25,7 @@
   "scripts": {
     "dev": "vite",
     "lint": "eslint .",
-    "test": "jest",
+    "test": "jest --coverage",
     "build": "tsc && vite build",
     "prepack": "yarn build",
     "prepublish": "yarn run lint && yarn run test"
