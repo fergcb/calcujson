@@ -21,6 +21,7 @@ import {
 
 import GetComputation from './computations/GetComputation'
 import SetComputation from './computations/SetComputation'
+import FormatComputation from './computations/FormatComputation'
 
 type ComputationFactory = (data: Computable) => Computation<any>
 
@@ -46,6 +47,7 @@ export default function (store: IStore = new Store()): ComputationFactory {
       case 'xor': return new XorComputation(store, data)
       case 'get': return new GetComputation(store, data)
       case 'set': return new SetComputation(store, data)
+      case 'format': return new FormatComputation(store, data)
       default: throw Error(`Unrecognised computation type '${(data as Computable).type}'.`)
     }
   }

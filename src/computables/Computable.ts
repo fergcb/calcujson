@@ -17,6 +17,7 @@ import {
 
 import type GetComputable from './GetComputable'
 import type SetComputable from './SetComputable'
+import type FormatComputable from './FormatComputable'
 
 type Computable
   = NumberComputable
@@ -32,5 +33,6 @@ type Computable
   | XorComputable
   | GetComputable
   | SetComputable
+  | FormatComputable
 
 export default Computable
