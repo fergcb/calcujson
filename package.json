@@ -2,6 +2,7 @@
   "name": "calcujson",
   "version": "0.2.2",
   "description": "A standard for transmitting computable expressions in JSON formatted text.",
+  "license": "MIT",
   "author": "Fergus Bentley <mail@fergcb.uk> (https://fergusbentley.com)",
   "homepage": "https://github.com/fergcb/calcujson",
   "repository": {
@@ -26,6 +27,7 @@
     "lint": "eslint .",
     "test": "jest",
     "build": "tsc && vite build",
+    "prepack": "yarn build",
     "prepublish": "yarn run lint && yarn run test"
   },
   "devDependencies": {
