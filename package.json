@@ -1,6 +1,6 @@
 {
   "name": "calcujson",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A standard for transmitting computable expressions in JSON formatted text.",
   "author": "Fergus Bentley <mail@fergcb.uk> (https://fergusbentley.com)",
   "homepage": "https://github.com/fergcb/calcujson",
