@@ -7,5 +7,5 @@ import type Computable from './Computable'
 export default interface FormatComputable extends BaseComputable {
   type: 'format'
   format: string
-  values: Computable[]
+  values?: Computable[]
 }

@@ -11,7 +11,7 @@ export default class FormatComputation extends Computation<FormatComputable> {
   constructor (store: IStore, data: FormatComputable) {
     super(store, data)
     const factory = Factory(store)
-    this.values = data.values.map(computable => factory(computable))
+    this.values = data.values?.map(computable => factory(computable)) ?? []
   }
 
   public evaluate (): string {

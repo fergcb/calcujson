@@ -12,7 +12,7 @@ export default class SetComputation extends Computation<SetComputable> {
 
   constructor (store: IStore, data: SetComputable) {
     super(store, data)
-    const factory = Factory()
+    const factory = Factory(store)
     this.computation = factory(this.data.value)
   }
 
