@@ -28,4 +28,19 @@ describe('SetComputation', () => {
   it('is described with the walrus operator', () => {
     expect(computation.desc).toBe(`${testPath} := ${testValue}`)
   })
+
+  it('evaluates children on same store', () => {
+    const store = new Store({ buzz: testValue })
+
+    const computation = new SetComputation(store, {
+      type: 'set',
+      path: testPath,
+      value: { type: 'get', path: 'buzz' },
+    })
+
+    computation.evaluate()
+
+    expect(store.has(testPath)).toBe(true)
+    expect(store.get(testPath)).toEqual(testValue)
+  })
 })
